@@ -4,15 +4,16 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Menu {
+	
 
 	public static void main(String[] args) {
 
 		Scanner leia = new Scanner(System.in);
-		
 		Locale.setDefault(Locale.US);
 		
+		
 		float peso, altura;
-		int  tamanho, opcao,tipo;
+		int  cor, opcao,tipo;
 		String nome, menu = """
 				-------------------------
 				|   BRECHÓ DO ROSDRIGO   |
@@ -44,32 +45,13 @@ public class Menu {
 				System.out.println("Bem vindo, Digite o seu nome: ");
 				leia.skip("\\R?");
 				nome = leia.nextLine();
-				
-
-				System.out.println("Olá " + nome + ", Digite sua Altura (ex: 1.75)");
-				altura = leia.nextFloat();
-
-				System.out.println("Olá " + nome + ", Digite seu peso (ex: 65.5)");
-				peso = leia.nextFloat();
-				
-				
-				do {
-					System.out.println("Digite 1 para calças ou 2 para blusas  :");
-					tipo = leia.nextInt();
-				} while (tipo < 1 || tipo > 2);
-				System.out.println("Digite a cor da sua calça 1 - Verde, 2 - Azul, 3 - Amarelo ");
-				tamanho = leia.nextInt();
-				
-				switch(tamanho) {
-				
-				
-				}
-				
+														
 				break;
 				
 			case 2:
 			
 				System.out.println("Aqui estão seus pedidos\n\n");
+				
 				break;
 				
 			case 3:
