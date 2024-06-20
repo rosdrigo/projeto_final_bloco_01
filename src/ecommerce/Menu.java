@@ -1,5 +1,6 @@
 package ecommerce;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Menu {
@@ -7,6 +8,8 @@ public class Menu {
 	public static void main(String[] args) {
 
 		Scanner leia = new Scanner(System.in);
+		
+		Locale.setDefault(Locale.US);
 		
 		float peso, altura;
 		int  tamanho, opcao,tipo;
@@ -56,6 +59,11 @@ public class Menu {
 				} while (tipo < 1 || tipo > 2);
 				System.out.println("Digite a cor da sua calça 1 - Verde, 2 - Azul, 3 - Amarelo ");
 				tamanho = leia.nextInt();
+				
+				switch(tamanho) {
+				
+				
+				}
 				
 				break;
 				
