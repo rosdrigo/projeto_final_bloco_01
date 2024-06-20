@@ -5,8 +5,8 @@ public class Camisa extends Roupa {
 	private int capuz;
 	private int manga;
 	
-	public Camisa(int tamanho, String cor, int genero, int capuz, int manga, int numero) {
-		super(tamanho, cor, genero,numero);
+	public Camisa(String cor, String genero,int numero, int capuz, int manga) {
+		super(cor, genero,numero);
 		
 		this.capuz = capuz;
 		this.manga = manga;
@@ -19,6 +19,8 @@ public class Camisa extends Roupa {
 
 	public void setCapuz(int capuz) {
 		this.capuz = capuz;
+		
+		
 	}
 
 	public int getManga() {
@@ -31,8 +33,8 @@ public class Camisa extends Roupa {
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("1 - Com Manga, 2 - Sem Manga "+ this.manga);
-		System.out.println("1 - Com Capuz, 2 - Sem Capuz "+ this.capuz);
+		System.out.println("Sua Escolha (1 com manga / 2 sem manga):  "+ this.manga);
+		System.out.println("Sua Escolha (1 com capuz / 2 sem capuz):  "+ this.capuz);
 	}
 
 }

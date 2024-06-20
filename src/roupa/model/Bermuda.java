@@ -4,8 +4,8 @@ public class Bermuda extends Roupa {
 
 	private int bolso;
 	
-	public Bermuda(int tamanho, String cor, int genero, int bolso, int numero) {
-		super(tamanho, cor, genero,numero);
+	public Bermuda( String cor, String genero,int numero, int bolso ) {
+		super(cor, genero,numero);
 		
 		this.bolso = bolso;
 		
@@ -23,7 +23,7 @@ public class Bermuda extends Roupa {
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("1 - Com bolso, 2 - Sem bolso "+ this.bolso);
+		System.out.println("Sua Escolha (1 com bolso / 2 sem bolso):  "+ this.bolso);
 		
 	}
 

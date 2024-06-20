@@ -26,7 +26,8 @@ public class ContaController implements RoupaRepository {
 		for (var roupa : listaDeRoupas) {
 			roupa.visualizar();
 
-	}}
+		}
+	}
 
 	@Override
 	public void cadastrar(Roupa roupa) {
@@ -37,42 +38,42 @@ public class ContaController implements RoupaRepository {
 
 	@Override
 	public void atualizar(Roupa roupa) {
-var buscaConta = buscarNaCollection(roupa.getNumero());
-		
+		var buscaConta = buscarNaCollection(roupa.getNumero());
+
 		if (buscaConta != null) {
 			listaDeRoupas.set(listaDeRoupas.indexOf(buscaConta), roupa);
-			System.out.println("\nA Conta número: " + roupa.getNumero()+ " foi atualizada com sucesso!");
-			
-		}else {System.out.println("\nA Conta número: " + roupa.getNumero()+ " não foi encontrada!");
-			
-		}
-		
-	}
+			System.out.println("\nA Conta número: " + roupa.getNumero() + " foi atualizada com sucesso!");
 
-	
+		} else {
+			System.out.println("\nA Conta número: " + roupa.getNumero() + " não foi encontrada!");
+
+		}
+
+	}
 
 	@Override
 	public void deletar(int numero) {
-var roupa = buscarNaCollection(numero);
-		
-		if(roupa != null) {
-			if(listaDeRoupas.remove(roupa)==true)
+		var roupa = buscarNaCollection(numero);
+
+		if (roupa != null) {
+			if (listaDeRoupas.remove(roupa) == true)
 				System.out.println("\nA Conta número " + numero + " foi deletada com sucesso!");
-		}else {
+		} else {
 			System.out.println("\nA Conta número " + numero + " não foi encontrada!");
 		}
 
 	}
+	public int gerarNumero() {
+		return ++numero;
+	}
 
 	public Roupa buscarNaCollection(int numero) {
-		for(var roupa: listaDeRoupas) {
+		for (var roupa : listaDeRoupas) {
 			if (roupa.getNumero() == numero) {
 				return roupa;
 			}
 		}
-	return null;
-	 
-	
-	
-}
+		return null;
+
+	}
 }
