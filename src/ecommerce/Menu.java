@@ -1,5 +1,7 @@
 package ecommerce;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -14,7 +16,7 @@ public class Menu {
 		
 		float peso, altura;
 		int  cor, opcao,tipo;
-		String nome, menu = """
+		String  nome, menu = """
 				-------------------------
 				|   BRECHÓ DO ROSDRIGO   |
 				-------------------------
@@ -27,10 +29,17 @@ public class Menu {
 				""";
 
 		while (true) {
-
 			System.out.println(menu);
 			System.out.println("Entre com a opção desejada: ");
-			opcao = leia.nextInt();
+			try {
+				opcao = leia.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("\nDigite valores inteiros!");
+				leia.nextLine();
+				opcao = 0;
+			}
+			
+			
 
 			if (opcao == 5) {
 
@@ -45,7 +54,8 @@ public class Menu {
 				System.out.println("Bem vindo, Digite o seu nome: ");
 				leia.skip("\\R?");
 				nome = leia.nextLine();
-														
+					
+				keyPress();
 				break;
 				
 			case 2:
@@ -81,6 +91,16 @@ public class Menu {
 		System.out.println("github.com/rosdrigo");
 		System.out.println("*********************************************************");
 
-	}
+	}public static void keyPress() {
+
+		try {
+
+			System.out.println( "\n\nPressione Enter para Continuar...");
+			System.in.read();
+
+		} catch (IOException e) {
+
+			System.out.println("Você pressionou uma tecla diferente de enter!");
 
 }
+	}}
